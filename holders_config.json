@@ -1,0 +1,39 @@
+{
+  "holders": [
+    {
+      "name": "Medallion of Memoria",
+      "snapshot_timestamp": "latest",
+      "holdings": [
+        {
+          "name": "A Letter from the Universe",
+          "holding": 1
+        },
+        {
+          "name": "The Reflection of Love",
+          "holding": 1
+        },
+        {
+          "name": "The Symbol of Love and Unity",
+          "holding": 1
+        }
+      ],
+      "stats": [
+        {
+          "title": "Hold 3 NFT - Unique",
+          "name":"3 NFT",
+          "condition": "(value['A Letter from the Universe'] >= 1 && value['The Reflection of Love'] >= 1 && value['The Symbol of Love and Unity'] >= 1)"
+        },
+        {
+          "title":"Hold 2 NFT - Unique",
+          "name":"2 NFT",
+          "condition": "((value['A Letter from the Universe'] >= 1 && value['The Reflection of Love'] >= 1) || (value['A Letter from the Universe'] >= 1 && value['The Symbol of Love and Unity'] >= 1) || (value['The Reflection of Love'] >= 1 && value['A Letter from the Universe'] >= 1))"
+        },
+        {
+          "title":"Hold 1 NFT - Unique",
+          "name":"1 NFT",
+          "condition": "(value['A Letter from the Universe'] >= 1 || value['The Reflection of Love'] >= 1 || value['The Symbol of Love and Unity'] >= 1)"
+        }
+      ]
+    }
+  ]
+}

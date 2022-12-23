@@ -1,0 +1,82 @@
+<template>
+  <div
+    class="flex flex-col col-span-full xl:col-span-8 bg-white shadow-lg rounded-sm border border-slate-200"
+  >
+    <header class="px-5 py-4 border-b border-slate-100 flex items-center">
+      <h2 class="font-semibold text-slate-800">Medallion statistics</h2>
+    </header>
+    <!-- Chart built with Chart.js 3 -->
+    <!-- Change the height attribute to adjust the chart height -->
+    <LineChart :data="chartData" width="800" height="300" />
+  </div>
+</template>
+
+<script>
+import { ref } from "vue";
+import LineChart from "../../charts/LineChart05.vue";
+
+// Import utilities
+import { tailwindConfig, hexToRGB } from "../../utils/Utils";
+import holders from "/result/holder/holders.json";
+
+export default {
+  name: "FintechCard01",
+  components: {
+    LineChart,
+  },
+  setup() {
+    const chartData = ref({
+      datasets: [
+        // Indigo line
+        {
+          label: "Total",
+          data: holders.collections.map((value) => {
+            let date = new Date(value.date);
+            return {
+              x: `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`,
+              y: value.total,
+            };
+          }),
+          borderColor: tailwindConfig().theme.colors.indigo[500],
+          fill: true,
+          backgroundColor: `rgba(${hexToRGB(
+            tailwindConfig().theme.colors.blue[500]
+          )}, 0.08)`,
+          borderWidth: 2,
+          tension: 0,
+          pointRadius: 0,
+          pointHoverRadius: 3,
+          pointBackgroundColor: tailwindConfig().theme.colors.indigo[500],
+          clip: 20,
+        },
+        // Indigo line
+        {
+          label: "Unique Wallet",
+          data: holders.collections.map((value) => {
+            let date = new Date(value.date);
+            return {
+              x: `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`,
+              y: value.unique_holder,
+            };
+          }),
+          borderColor: tailwindConfig().theme.colors.indigo[200],
+          fill: true,
+          backgroundColor: `rgba(${hexToRGB(
+            tailwindConfig().theme.colors.indigo[200]
+          )}, 0.08)`,
+          borderWidth: 2,
+          tension: 0,
+          pointRadius: 0,
+          pointHoverRadius: 3,
+          pointBackgroundColor: tailwindConfig().theme.colors.indigo[200],
+          clip: 20,
+        },
+      ],
+    });
+
+    return {
+      chartData,
+    };
+  },
+};
+</script>
