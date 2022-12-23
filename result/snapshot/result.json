@@ -1,0 +1,55 @@
+{
+  "collections": [
+    {
+      "name": "The Symbol of Love and Unity",
+      "snapshot": [
+        {
+          "date": "2022/12/21 23:57:05",
+          "timestamp": "1671663425766",
+          "holder": 3189,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671663460020.json"
+        },
+        {
+          "date": "2022/12/23 01:21:18",
+          "timestamp": "1671754878806",
+          "holder": 3194,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671754913146.json"
+        }
+      ]
+    },
+    {
+      "name": "The Reflection of Love",
+      "snapshot": [
+        {
+          "date": "2022/12/21 23:57:05",
+          "timestamp": "1671663425766",
+          "holder": 4368,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671663493164.json"
+        },
+        {
+          "date": "2022/12/23 01:21:18",
+          "timestamp": "1671754878806",
+          "holder": 4371,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671754958361.json"
+        }
+      ]
+    },
+    {
+      "name": "A Letter from the Universe",
+      "snapshot": [
+        {
+          "date": "2022/12/21 23:57:05",
+          "timestamp": "1671663425766",
+          "holder": 3257,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671663532386.json"
+        },
+        {
+          "date": "2022/12/23 01:21:18",
+          "timestamp": "1671754878806",
+          "holder": 3265,
+          "file": "C:\\Users\\Quentin\\WebstormProjects\\Tomorrowland Medallion Checker\\result\\snapshot\\data\\1671754993799.json"
+        }
+      ]
+    }
+  ]
+}
