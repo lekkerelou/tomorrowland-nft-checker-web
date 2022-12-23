@@ -33,7 +33,7 @@ export default {
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
             return {
-              x: `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`,
+              x: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
               y: value.total,
             };
           }),
@@ -55,7 +55,7 @@ export default {
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
             return {
-              x: `${date.getFullYear()}/${date.getMonth()}/${date.getDate()}`,
+              x: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
               y: value.unique_holder,
             };
           }),
