@@ -104,7 +104,7 @@ export default {
         if(holders.collections.at(-1).holders[`${event.target.value}`] !== undefined){
           snapshoted.value = true;
           if(holders.collections.at(-1).holders[`${event.target.value}`]['Medallion of Memoria'] > 1 ){
-            text.value = `Attention! Your address <b>is eligible</b> for the medallion snapshot but you have <b>${holders.collections.at(-1).holders[`${event.target.value}`]['Medallion of Memoria']} medallions</b>. Please split them in other wallets to be able to use them all.`;
+            text.value = `Attention! This wallet own multiple  Medaillon (<b>${holders.collections.at(-1).holders[`${event.target.value}`]['Medallion of Memoria']}</b>). If you want to buy more than 4 tickets during pre-sales, you've to split it into multiple wallets. 1 MED = 1 TML account`;
             color.value = "bg-yellow-50 border-yellow-300";
           }else{
             text.value = "Congratulations, your address <b>is eligible</b> for the medaillion snapshot";
