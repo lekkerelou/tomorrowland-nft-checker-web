@@ -27,7 +27,7 @@ async function run() {
   const str = fs.readFileSync(path.resolve("mints.json")).toString();
   const mintJson = JSON.parse(str);
 
-  const resultPath = `${folderResult}\\result.json`;
+  const resultPath = `${folderResult}/result.json`;
   let result: any;
   if (!fs.existsSync(resultPath)) {
     result = {
@@ -83,7 +83,7 @@ const snapshot = async (name: string, addresses: Array<PublicKey>) => {
 
   const moment = require("moment");
   const timestamp = moment().format("x");
-  const output = `${folderSnapshotData}\\${timestamp}.json`;
+  const output = `${folderSnapshotData}/${timestamp}.json`;
 
   const finalResult = {
     name: name,

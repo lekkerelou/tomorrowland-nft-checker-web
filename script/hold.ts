@@ -21,12 +21,11 @@ const rolesConfigPath = fs
   .readFileSync(path.resolve("holders_config.json"))
   .toString();
 const snapshotPath = fs
-  .readFileSync(`${snapshotDirectory}\\result.json`)
+  .readFileSync(`${snapshotDirectory}/result.json`)
   .toString();
 
 const rolesConfigJson = JSON.parse(rolesConfigPath);
 const snapshotJson = JSON.parse(snapshotPath);
-
 async function run() {
   const cliProgress = require("cli-progress");
   const bar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
@@ -101,7 +100,7 @@ async function run() {
     }
     success(`Cleaning all snapshot taken successfully`);
 
-    const resultFile = `${snapshotDirectory}\\snapshot_aggregate_${role.snapshot_timestamp}.json`;
+    const resultFile = `${snapshotDirectory}/snapshot_aggregate_${role.snapshot_timestamp}.json`;
     fs.writeFileSync(
       resultFile,
       JSON.stringify(Object.fromEntries(result), null, 2)
@@ -110,7 +109,7 @@ async function run() {
 
     const moment = require("moment");
     const timestamp = moment().format("x");
-    const holder_list_rank = `${rolesDirectory}\\holders.json`;
+    const holder_list_rank = `${rolesDirectory}/holders.json`;
 
     const stats: any[] = [];
 

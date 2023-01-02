@@ -14,6 +14,7 @@
 <script>
 import { ref } from "vue";
 import LineChart from "../../charts/LineChart05.vue";
+import moment from "moment";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
@@ -32,8 +33,9 @@ export default {
           label: "Total",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
+    	    const timestamp = moment(date).subtract(1, 'days').format("YYYY/MM/DD");
             return {
-              x: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
+              x: `${timestamp}`,
               y: value.total,
             };
           }),
@@ -54,8 +56,9 @@ export default {
           label: "Unique Wallet",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
+	    const timestamp = moment(date).subtract(1, 'days').format("YYYY/MM/DD");          
             return {
-              x: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
+              x: `${timestamp}`,
               y: value.unique_holder,
             };
           }),
