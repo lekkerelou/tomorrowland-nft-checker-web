@@ -25,6 +25,7 @@ import 'chartjs-adapter-moment'
 
 // Import utilities
 import { tailwindConfig } from '../utils/Utils'
+import moment from "moment/moment";
 
 Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip)
 
@@ -51,18 +52,10 @@ export default {
               type: 'time',
               time: {
                 unit: 'day',
-                round: 'day',
-                unitStepSize: 1,
+                //round: 'day',
+                //unitStepSize: 1,
                 displayFormats: {
-                  'millisecond': 'D MMM YYYY',
-                  'second': 'D MMM YYYY, hh:mm a',
-                  'minute': 'DD MMM YYYY , hh:mm a',
-                  'hour': 'D MMM YYYY, hh:mm a',
                   'day': 'YYYY/MM/DD',
-                  'week': 'D MMM YYYY, hh:mm a',
-                  'month': 'D MMM YYYY, hh:mm a',
-                  'quarter': 'D MMM YYYY, hh:mm a',
-                  'year': 'D MMM YYYY, hh:mm a',
                 }
               },
               ticks: {
@@ -81,7 +74,7 @@ export default {
             },
             tooltip: {
               callbacks: {
-                title: () => false, // Disable tooltip title
+                title: (context) => moment(context[0].parsed.x).format("YYYY/MM/DD hh:mm:ss A"), // Disable tooltip title
                 label: (context) => `${context.parsed.y}`,
               },
             },
