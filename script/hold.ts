@@ -156,6 +156,9 @@ async function run() {
       );
     });
 
+    // REMOVE CONTRACT ADDRESS
+    result.delete('1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix');
+
     success(`Generate [${role.name}] unique holder list taken successfully`);
     success(`[${role.name}] unique holder list size : ${result.size}`);
     const realMedalion = Array.from(result).reduce(function (n, val) {
@@ -174,9 +177,6 @@ async function run() {
         .toString();
       collections = JSON.parse(resultFile);
     }
-
-    // REMOVE CONTRACT ADDRESS
-    result.delete('1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix');
 
     const time = moment();
     const collection = {
