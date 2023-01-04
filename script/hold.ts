@@ -175,6 +175,9 @@ async function run() {
       collections = JSON.parse(resultFile);
     }
 
+    // REMOVE CONTRACT ADDRESS
+    result.delete('1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix');
+
     const time = moment();
     const collection = {
       name: role.name,
