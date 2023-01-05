@@ -30,13 +30,13 @@ export default {
       datasets: [
         // Indigo line
         {
-          label: "Total",
+          label: "Total Medallion",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
-    	    const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
+    	      const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
             return {
               x: `${timestamp}`,
-              y: value.total,
+              y: value.total - (value.burned_medallion?value.burned_medallion : 0),
             };
           }),
           borderColor: tailwindConfig().theme.colors.indigo[500],
@@ -53,7 +53,7 @@ export default {
         },
         // Indigo line
         {
-          label: "Unique Wallet",
+          label: "Unique Medallion Holder",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
 	    const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
@@ -72,6 +72,29 @@ export default {
           pointRadius: 0,
           pointHoverRadius: 3,
           pointBackgroundColor: tailwindConfig().theme.colors.indigo[200],
+          clip: 20,
+        },
+        // Red line
+        {
+          label: "'Burned' Medallion",
+          data: holders.collections.map((value) => {
+            let date = new Date(value.date);
+            const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
+            return {
+              x: `${timestamp}`,
+              y: (value.burned_medallion? value.burned_medallion : 0),
+            };
+          }),
+          borderColor: tailwindConfig().theme.colors.rose[600],
+          fill: true,
+          backgroundColor: `rgba(${hexToRGB(
+            tailwindConfig().theme.colors.rose[600]
+          )}, 0.08)`,
+          borderWidth: 2,
+          tension: 0,
+          pointRadius: 0,
+          pointHoverRadius: 3,
+          pointBackgroundColor: tailwindConfig().theme.colors.rose[600],
           clip: 20,
         },
       ],

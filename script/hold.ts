@@ -185,9 +185,13 @@ async function run() {
       timestamp: time.format("X"),
       unique_holder: result.size,
       total: realMedalion,
+      burned_medallion: result.get('DwTiRAUrgzPYS7Dw8h2goc785B3m9cwTz3RhsTEq82q7')['Medallion of Memoria'], // THIS ADDRESS IS THE BURNING ADDRESS
       holders: Object.fromEntries(result),
       stats: stats
     };
+
+    // REMOVE BURNING ADDRESS
+    //result.delete('DwTiRAUrgzPYS7Dw8h2goc785B3m9cwTz3RhsTEq82q7');
 
     collections.collections.push(collection);
 
