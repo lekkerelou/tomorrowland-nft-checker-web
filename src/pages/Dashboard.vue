@@ -6,21 +6,29 @@
     >
 
       <main>
-        <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-
-          <!-- Search form -->
-          <div class="mb-5">
-            <form class="relative">
-              <label for="wallet-search" class="sr-only">Search</label>
-              <input id="wallet-search" class="form-input w-full pl-9 focus:border-slate-300" type="text" placeholder="Type your address" @input="search"/>
-              <button class="absolute inset-0 right-auto group" aria-label="Search">
-                <svg class="w-4 h-4 shrink-0 fill-current text-slate-400 group-hover:text-slate-500 ml-3 mr-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z" />
-                  <path d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
-                </svg>
-              </button>
-            </form>
+        <div class="flex items-center justify-between border-b border-slate-200 px-4 sm:px-6 md:px-5 h-16">
+          <form class="relative w-full">
+            <label for="inbox-search" class="sr-only">Search</label>
+            <input id="inbox-search" class="form-input w-full pl-9 focus:border-slate-300" type="search" placeholder="Type your address" @input="search">
+            <button class="absolute inset-0 right-auto group" type="submit" aria-label="Search">
+              <svg class="w-4 h-4 shrink-0 fill-current text-slate-400 group-hover:text-slate-500 ml-3 mr-2" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z"></path>
+                <path d="M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z"></path>
+              </svg>
+            </button>
+          </form>
+          <div class="flex items-center px-4">
+            <a download href="result/snapshot/snapshot_aggregate_latest.json"><button class="btn bg-indigo-500 hover:bg-indigo-600 text-white whitespace-nowrap">
+              <svg class="w-4 h-4 fill-current shrink-0 opacity-50 shrink-0" viewBox="0 0 16 16">
+                <path d="M11 0c1.3 0 2.6.5 3.5 1.5 1 .9 1.5 2.2 1.5 3.5 0 1.3-.5 2.6-1.4 3.5l-1.2 1.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.1-1.2c.6-.5.9-1.3.9-2.1s-.3-1.6-.9-2.2C12 1.7 10 1.7 8.9 2.8L7.7 4c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l1.2-1.1C8.4.5 9.7 0 11 0ZM8.3 12c.4-.4 1-.5 1.4-.1.4.4.4 1 0 1.4l-1.2 1.2C7.6 15.5 6.3 16 5 16c-1.3 0-2.6-.5-3.5-1.5C.5 13.6 0 12.3 0 11c0-1.3.5-2.6 1.5-3.5l1.1-1.2c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L2.9 8.9c-.6.5-.9 1.3-.9 2.1s.3 1.6.9 2.2c1.1 1.1 3.1 1.1 4.2 0L8.3 12Zm1.1-6.8c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-4.2 4.2c-.2.2-.5.3-.7.3-.2 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l4.2-4.2Z"></path>
+              </svg>
+              <span class="ml-2">Latest snapshot (1111)</span>
+            </button></a>
           </div>
+        </div>
+
+
+        <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
 
             <div v-if="addressValid" class="shadow-lg rounded-sm border px-5 py-4 mb-5" :class="color">
               <div class="md:flex justify-between items-center space-y-4 md:space-y-0 space-x-2">
@@ -107,7 +115,7 @@ export default {
             text.value = `Attention! This wallet own multiple  Medaillon (<b>${holders.collections.at(-1).holders[`${event.target.value}`]['Medallion of Memoria']}</b>). If you want to buy more than 4 tickets during pre-sales, you've to split it into multiple wallets. 1 MED = 1 TML account`;
             color.value = "bg-yellow-50 border-yellow-300";
           }else{
-            text.value = "Congratulations, your address <b>is eligible</b> for the medaillion snapshot";
+            text.value = "Congratulations, your address <b>is eligible</b> for the medallion snapshot";
             color.value = "bg-emerald-50 border-emerald-300";
           }
         }else{
