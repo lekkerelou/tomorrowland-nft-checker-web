@@ -26,20 +26,22 @@ export default {
   },
   setup() {
     const chartData = ref({
-      labels: holders.collections.at(-1).stats.map(value => `${value.name} (${value.value})`).reverse(),
+      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value})`).reverse(), `'Burned' Medallion (${holders.collections.at(-1).burned_medallion})`],
       datasets: [
         {
           label: "Holding",
-          data: holders.collections.at(-1).stats.map(value => value.value).reverse(),
+          data: [...holders.collections.at(-1).stats.map(value => value.value).reverse(), holders.collections.at(-1).burned_medallion],
           backgroundColor: [
             tailwindConfig().theme.colors.indigo[600],
             tailwindConfig().theme.colors.indigo[400],
             tailwindConfig().theme.colors.indigo[200],
+            tailwindConfig().theme.colors.rose[600],
           ],
           hoverBackgroundColor: [
             tailwindConfig().theme.colors.indigo[800],
             tailwindConfig().theme.colors.indigo[500],
             tailwindConfig().theme.colors.indigo[300],
+            tailwindConfig().theme.colors.rose[700],
           ],
           hoverBorderColor: tailwindConfig().theme.colors.white,
         },
