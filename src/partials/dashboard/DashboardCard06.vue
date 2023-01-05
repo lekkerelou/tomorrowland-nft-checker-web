@@ -26,7 +26,7 @@ export default {
   },
   setup() {
     const chartData = ref({
-      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value})`).reverse(), `'Burned' Medallion (${holders.collections.at(-1).burned_medallion})`],
+      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value})`).reverse(), `Exchanged Medallion (${holders.collections.at(-1).burned_medallion})`],
       datasets: [
         {
           label: "Holding",

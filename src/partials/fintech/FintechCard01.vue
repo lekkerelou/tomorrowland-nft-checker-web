@@ -76,7 +76,7 @@ export default {
         },
         // Red line
         {
-          label: "'Burned' Medallion",
+          label: "Exchanged Medallion",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
             const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
