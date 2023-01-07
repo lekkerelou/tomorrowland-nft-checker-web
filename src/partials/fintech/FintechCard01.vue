@@ -99,7 +99,7 @@ export default {
         },
         // Green line
         {
-          label: "Medallion redeemable",
+          label: "Medallion Redeemable",
           data: holders.collections.map((value) => {
             console.log(value);
             let date = new Date(value.date);
