@@ -3,7 +3,7 @@
     class="flex flex-col col-span-full xl:col-span-8 bg-white shadow-lg rounded-sm border border-slate-200"
   >
     <header class="px-5 py-4 border-b border-slate-100 flex items-center">
-      <h2 class="font-semibold text-slate-800">Medallion statistics</h2>
+      <h2 class="font-semibold text-slate-800">Medallion of Memoria statistics</h2>
     </header>
     <!-- Chart built with Chart.js 3 -->
     <!-- Change the height attribute to adjust the chart height -->

@@ -2,7 +2,6 @@
   <div className="px-5 py-3">
     <div className="flex flex-wrap justify-between items-end">
       <div className="flex items-center">
-        <div className="text-3xl font-bold text-slate-800 mr-2">Medallion of Memoria</div>
         <!-- <div className="text-sm"><span className="font-medium text-slate-800">17.4%</span> AVG</div> -->
       </div>
       <div className="grow ml-2 mb-1">
