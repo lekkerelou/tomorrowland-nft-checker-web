@@ -1,6 +1,7 @@
 import { error, info, success, warn } from "./helpers/log";
 import "dotenv/config";
 import { size } from "lodash";
+import { getAccountInfo } from "./utils/get-account-info";
 
 const path = require("path");
 const fs = require("fs");
@@ -115,7 +116,7 @@ async function run() {
 
     role.stats.forEach((statistique: any) => {
       const statsArray = Array.from(result.values());
-      const res = statsArray.filter(value =>
+      const res = statsArray.filter((value) =>
         eval(statistique.condition)
       ).length;
       success(`[${statistique.title}] : ${res}`);
@@ -149,15 +150,25 @@ async function run() {
       error(`${lost} Holder does not match the requirement`);
     });
 
-    Array.from(result).map((value: any) => {
+    Array.from(result).map(async (value: any) => {
       value[1][role.name] = Math.min.apply(
         null,
         Object.entries(value[1]).map((value1: any) => value1[1])
       );
     });
 
+    info(`Get all holder wallet balance`);
+    let progress = 0;
+    bar.start(result.size, progress);
+    for (const account of Array.from(result)) {
+      account[1]["balance"] = await getAccountInfo(account[0]);
+      bar.update((progress += 1));
+    }
+    bar.stop();
+    success(`Get all holder wallet balance taken successfully`);
+
     // REMOVE CONTRACT ADDRESS
-    result.delete('1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix');
+    result.delete("1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix");
 
     success(`Generate [${role.name}] unique holder list taken successfully`);
     success(`[${role.name}] unique holder list size : ${result.size}`);
@@ -185,9 +196,11 @@ async function run() {
       timestamp: time.format("X"),
       unique_holder: result.size,
       total: realMedalion,
-      burned_medallion: result.get('DwTiRAUrgzPYS7Dw8h2goc785B3m9cwTz3RhsTEq82q7')['Medallion of Memoria'], // THIS ADDRESS IS THE BURNING ADDRESS
+      burned_medallion: result.get(
+        "DwTiRAUrgzPYS7Dw8h2goc785B3m9cwTz3RhsTEq82q7"
+      )["Medallion of Memoria"], // THIS ADDRESS IS THE BURNING ADDRESS
       holders: Object.fromEntries(result),
-      stats: stats
+      stats: stats,
     };
 
     // REMOVE BURNING ADDRESS

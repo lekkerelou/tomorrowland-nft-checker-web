@@ -30,7 +30,7 @@ export default {
       datasets: [
         {
           label: "Holding",
-          data: [...holders.collections.at(-1).stats.map(value => value.value).reverse(), holders.collections.at(-1).burned_medallion],
+          data: [...holders.collections.at(-1).stats.map(value => value.value - 1).reverse(), holders.collections.at(-1).burned_medallion],
           backgroundColor: [
             tailwindConfig().theme.colors.indigo[600],
             tailwindConfig().theme.colors.indigo[400],
