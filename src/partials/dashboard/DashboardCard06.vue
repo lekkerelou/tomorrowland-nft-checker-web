@@ -26,22 +26,29 @@ export default {
   },
   setup() {
     const chartData = ref({
-      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value})`).reverse(), `Exchanged Medallion (${holders.collections.at(-1).burned_medallion})`],
+      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value - 1})`).reverse(),
+        `Exchanged Medallion (${holders.collections.at(-1).burned_medallion})`,
+        `Medallion Redeemable(${holders.collections.at(-1).reedemable_medallion})`],
       datasets: [
         {
           label: "Holding",
-          data: [...holders.collections.at(-1).stats.map(value => value.value - 1).reverse(), holders.collections.at(-1).burned_medallion],
+          data: [...holders.collections.at(-1).stats.map(value => value.value - 1).reverse(),
+            holders.collections.at(-1).burned_medallion,
+            holders.collections.at(-1).reedemable_medallion
+          ],
           backgroundColor: [
             tailwindConfig().theme.colors.indigo[600],
             tailwindConfig().theme.colors.indigo[400],
             tailwindConfig().theme.colors.indigo[200],
             tailwindConfig().theme.colors.rose[600],
+            tailwindConfig().theme.colors.green[600],
           ],
           hoverBackgroundColor: [
             tailwindConfig().theme.colors.indigo[800],
             tailwindConfig().theme.colors.indigo[500],
             tailwindConfig().theme.colors.indigo[300],
             tailwindConfig().theme.colors.rose[700],
+            tailwindConfig().theme.colors.green[700],
           ],
           hoverBorderColor: tailwindConfig().theme.colors.white,
         },

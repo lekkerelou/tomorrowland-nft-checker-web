@@ -170,6 +170,10 @@ async function run() {
     // REMOVE CONTRACT ADDRESS
     result.delete("1BWutmTvYPwDtmw9abTkS4Ssr8no61spGAvW1X6NDix");
 
+    const redeemableMedalion = Array.from(result).reduce(function (n, val) {
+      return n + ((val[1]['balance'] > 0)? 1 : 0);
+    }, 0);
+
     success(`Generate [${role.name}] unique holder list taken successfully`);
     success(`[${role.name}] unique holder list size : ${result.size}`);
     const realMedalion = Array.from(result).reduce(function (n, val) {
@@ -196,6 +200,7 @@ async function run() {
       timestamp: time.format("X"),
       unique_holder: result.size,
       total: realMedalion,
+      reedemable_medallion: redeemableMedalion,
       burned_medallion: result.get(
         "DwTiRAUrgzPYS7Dw8h2goc785B3m9cwTz3RhsTEq82q7"
       )["Medallion of Memoria"], // THIS ADDRESS IS THE BURNING ADDRESS
