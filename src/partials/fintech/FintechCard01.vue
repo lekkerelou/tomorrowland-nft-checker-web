@@ -40,7 +40,7 @@ export default {
             };
           }),
           borderColor: tailwindConfig().theme.colors.indigo[500],
-          fill: true,
+          fill: false,
           backgroundColor: `rgba(${hexToRGB(
             tailwindConfig().theme.colors.blue[500]
           )}, 0.08)`,
@@ -63,7 +63,7 @@ export default {
             };
           }),
           borderColor: tailwindConfig().theme.colors.indigo[200],
-          fill: true,
+          fill: false,
           backgroundColor: `rgba(${hexToRGB(
             tailwindConfig().theme.colors.indigo[200]
           )}, 0.08)`,
@@ -86,7 +86,7 @@ export default {
             };
           }),
           borderColor: tailwindConfig().theme.colors.rose[600],
-          fill: true,
+          fill: false,
           backgroundColor: `rgba(${hexToRGB(
             tailwindConfig().theme.colors.rose[600]
           )}, 0.08)`,
@@ -96,31 +96,7 @@ export default {
           pointHoverRadius: 3,
           pointBackgroundColor: tailwindConfig().theme.colors.rose[600],
           clip: 20,
-        },
-        // Green line
-        {
-          label: "Medallion Redeemable",
-          data: holders.collections.map((value) => {
-            console.log(value);
-            let date = new Date(value.date);
-            const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
-            return {
-              x: `${timestamp}`,
-              y: (value.reedemable_medallion? value.reedemable_medallion : 0),
-            };
-          }),
-          borderColor: tailwindConfig().theme.colors.green[600],
-          fill: true,
-          backgroundColor: `rgba(${hexToRGB(
-            tailwindConfig().theme.colors.green[600]
-          )}, 0.08)`,
-          borderWidth: 2,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 3,
-          pointBackgroundColor: tailwindConfig().theme.colors.green[600],
-          clip: 20,
-        },
+        }
       ],
     });
 

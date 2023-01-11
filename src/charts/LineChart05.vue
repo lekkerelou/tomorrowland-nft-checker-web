@@ -25,9 +25,74 @@ import 'chartjs-adapter-moment'
 // Import utilities
 import { tailwindConfig } from '../utils/Utils'
 import moment from "moment/moment";
+import annotationPlugin from 'chartjs-plugin-annotation';
 
-Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip)
-
+Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip, annotationPlugin)
+const annotation1 = {
+  type: 'line',
+  scaleID: 'x',
+  borderWidth: 1,
+  borderColor: 'black',
+  value: "2023/01/10 23:59",
+  label: {
+    backgroundColor: 'black',
+    rotation: 'auto',
+    content: 'TML Snapshot',
+    display: true
+  },
+};
+const annotation3 = {
+  type: 'box',
+  backgroundColor: 'rgba(255, 245, 157, 0.3)',
+  borderWidth: 0,
+  xMax: "2023/01/10 22:00",
+  xMin: "2023/01/05 16:00",
+  label: {
+    drawTime: 'beforeDraw',
+    display: true,
+    rotation: '90',
+    content: 'Claim Medallion (Claim Voucher)',
+  }
+};
+const annotation4 = {
+  type: 'box',
+  backgroundColor: 'rgba(16, 185, 129, 0.3)',
+  borderWidth: 0,
+  xMax: "2023/01/12 14:00",
+  xMin: "2023/01/11 00:00",
+  label: {
+    drawTime: 'beforeDraw',
+    display: true,
+    rotation: '90',
+    content: 'Link Medallion',
+  }
+};
+const annotation6 = {
+  type: 'box',
+  backgroundColor: 'rgba(244, 63, 94, 0.3)',
+  borderWidth: 0,
+  xMax: "2023/01/16 23:59",
+  xMin: "2023/01/12 15:00",
+  label: {
+    drawTime: 'beforeDraw',
+    display: true,
+    rotation: '90',
+    content: 'Tomorrowland NFT Global Journey',
+  }
+};
+const annotation7 = {
+  type: 'box',
+  backgroundColor: 'rgba(244, 63, 94, 0.3)',
+  borderWidth: 0,
+  xMax: "2023/01/20 23:59",
+  xMin: "2023/01/17 15:00",
+  label: {
+    drawTime: 'beforeDraw',
+    display: true,
+    rotation: '90',
+    content: 'Tomorrowland NFT pre-sale',
+  }
+};
 export default {
   name: 'LineChart05',
   props: ['data', 'width', 'height'],
@@ -73,10 +138,19 @@ export default {
             },
             tooltip: {
               callbacks: {
-                title: (context) => moment(context[0].parsed.x).format("YYYY/MM/DD hh:mm:ss A"), // Disable tooltip title
+                title: (context) => moment(context[0].parsed.x).format("YYYY/MM/DD HH:mm:ss"), // Disable tooltip title
                 label: (context) => `${context.parsed.y}`,
               },
             },
+            annotation: {
+              annotations: {
+                annotation3,
+                annotation4,
+                annotation6,
+                annotation7,
+                annotation1,
+              }
+            }
           },
           interaction: {
             intersect: false,
