@@ -75,7 +75,7 @@ export default {
           clip: 20,
         },
         // Red line
-        {
+        /*{
           label: "Exchanged Medallion",
           data: holders.collections.map((value) => {
             let date = new Date(value.date);
@@ -96,7 +96,7 @@ export default {
           pointHoverRadius: 3,
           pointBackgroundColor: tailwindConfig().theme.colors.rose[600],
           clip: 20,
-        }
+        }*/
       ],
     });
 
