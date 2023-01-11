@@ -71,7 +71,7 @@ const annotation6 = {
   type: 'box',
   backgroundColor: 'rgba(244, 63, 94, 0.3)',
   borderWidth: 0,
-  xMax: "2023/01/16 23:59",
+  xMax: "2023/01/16 15:00",
   xMin: "2023/01/12 15:00",
   label: {
     drawTime: 'beforeDraw',
@@ -84,7 +84,7 @@ const annotation7 = {
   type: 'box',
   backgroundColor: 'rgba(244, 63, 94, 0.3)',
   borderWidth: 0,
-  xMax: "2023/01/20 23:59",
+  xMax: "2023/01/20 15:00",
   xMin: "2023/01/17 15:00",
   label: {
     drawTime: 'beforeDraw',
