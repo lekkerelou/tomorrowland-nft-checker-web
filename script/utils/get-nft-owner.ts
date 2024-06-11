@@ -64,8 +64,9 @@ export const getNftOwner: any = async (addresses: Array<PublicKey>, failed: numb
     });
   } catch (err: any) {
     failed = failed === 0 ? 1 : failed;
-    //console.error(`${err.response?.statusText}: Sleep ${1000 * failed}MS before retry...`);
-    await delay(1000 * failed);
+    console.error(`${err.response?.statusText}: Sleep ${2000 * failed}MS before retry...`);
+    await delay(2000 * failed);
+
     return getNftOwner(addresses, ++failed);
   }
 };

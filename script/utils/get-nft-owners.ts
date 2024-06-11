@@ -1,7 +1,7 @@
 import type { PublicKey } from "@solana/web3.js";
 import { getNftOwner } from "./get-nft-owner";
 
-export const getNftOwners = async (addresses: Array<PublicKey>, timeout: number = 100, onProgress: (num?: number) => void) => {
+export const getNftOwners = async (addresses: Array<PublicKey>, timeout: number = 200, onProgress: (num?: number) => void) => {
 
   const Bottleneck = require("bottleneck/es5");
   const { chunk, flatten } = require("lodash");

@@ -13,7 +13,7 @@
     "mint": "npx ts-node script/mint.ts",
     "snapshot": "npx ts-node script/snapshot.ts",
     "hold": "npx ts-node script/hold.ts",
-    "full": "npm run mint && npm run snapshot && npm run hold",
+    "full": "npm run snapshot && npm run hold",
     "cron": "npx ts-node script/cron.ts"
   },
   "dependencies": {
