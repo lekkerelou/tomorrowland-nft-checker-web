@@ -47,7 +47,7 @@
               <!-- Left side -->
               <div class="flex items-start space-x-3 md:space-x-4">
                 <div>
-                  <div class="text-sm">For any question about the website, please ask @lekkerelou on Tomorrowland Discord | Last Update: 21 Nov 2023</div>
+                  <div class="text-sm">For any question about the website, please ask @lekkerelou on Tomorrowland Discord | Last Update: 11 June 2024</div>
                 </div>
               </div>
               <!-- Right side -->
