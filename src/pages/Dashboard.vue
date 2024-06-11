@@ -41,6 +41,31 @@
                 <!-- Right side -->
               </div>
             </div>
+
+          <div class="shadow-lg rounded-sm border px-5 py-4 mb-5 bg-orange-50 border-orange-300" >
+            <div class="md:flex justify-between items-center space-y-4 md:space-y-0 space-x-2">
+              <!-- Left side -->
+              <div class="flex items-start space-x-3 md:space-x-4">
+                <div>
+                  <div class="text-sm">For any question about the website, please ask @lekkerelou on Tomorrowland Discord | Last Update: 21 Nov 2023</div>
+                </div>
+              </div>
+              <!-- Right side -->
+            </div>
+          </div>
+
+          <div class="shadow-lg rounded-sm border px-5 py-4 mb-5 bg-red-50 border-red-300" >
+            <div class="md:flex justify-between items-center space-y-4 md:space-y-0 space-x-2">
+              <!-- Left side -->
+              <div class="flex items-start space-x-3 md:space-x-4">
+                <div>
+                  <div class="text-sm">Exchanged Medaillon will be removed in next update (Option is no longer possible for the pre-sales registrations)</div>
+                </div>
+              </div>
+              <!-- Right side -->
+            </div>
+          </div>
+
           <!-- Cards -->
           <div class="grid grid-cols-12 gap-6">
             <FintechCard01 />
@@ -80,25 +105,9 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Dashboard",
   components: {
-    Sidebar,
     // eslint-disable-next-line vue/no-reserved-component-names
-    Header,
-    WelcomeBanner,
-    DashboardAvatars,
-    FilterButton,
-    Datepicker,
     FintechCard01,
-    DashboardCard01,
-    DashboardCard02,
-    DashboardCard03,
-    DashboardCard04,
-    DashboardCard05,
     DashboardCard06,
-    DashboardCard07,
-    DashboardCard08,
-    DashboardCard09,
-    DashboardCard10,
-    DashboardCard11,
 
   },
   setup() {
