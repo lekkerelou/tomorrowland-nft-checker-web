@@ -28,7 +28,7 @@ import moment from "moment/moment";
 import annotationPlugin from 'chartjs-plugin-annotation';
 
 Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip, annotationPlugin)
-const annotation1 = {
+/*const annotation1 = {
   type: 'line',
   scaleID: 'x',
   borderWidth: 1,
@@ -92,7 +92,7 @@ const annotation7 = {
     rotation: '90',
     content: 'Tomorrowland NFT pre-sale',
   }
-};
+};*/
 export default {
   name: 'LineChart05',
   props: ['data', 'width', 'height'],
@@ -144,11 +144,11 @@ export default {
             },
             annotation: {
               annotations: {
-                annotation3,
+                /*annotation3,
                 annotation4,
                 annotation6,
                 annotation7,
-                annotation1,
+                annotation1,*/
               }
             }
           },

@@ -74,29 +74,6 @@ export default {
           pointBackgroundColor: tailwindConfig().theme.colors.indigo[200],
           clip: 20,
         },
-        // Red line
-        {
-          label: "Exchanged Medallion",
-          data: holders.collections.map((value) => {
-            let date = new Date(value.date);
-            const timestamp = moment(date).format("YYYY/MM/DD HH:mm:ss");
-            return {
-              x: `${timestamp}`,
-              y: (value.burned_medallion? value.burned_medallion : 0),
-            };
-          }),
-          borderColor: tailwindConfig().theme.colors.rose[600],
-          fill: false,
-          backgroundColor: `rgba(${hexToRGB(
-            tailwindConfig().theme.colors.rose[600]
-          )}, 0.08)`,
-          borderWidth: 2,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 3,
-          pointBackgroundColor: tailwindConfig().theme.colors.rose[600],
-          clip: 20,
-        }
       ],
     });
 
