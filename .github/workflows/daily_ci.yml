@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
@@ -25,13 +27,13 @@ jobs:
         run: npm run full
 
       - name: Commit and push changes
+        env:
+          CI_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
           git config --global user.name 'lekkerelou'
           git config --global user.email 'loulou@banwaves.xyz'
           git add result/snapshot/data/*
           git add result/snapshot/result.json
           git add result/snapshot/snapshot_aggregate_latest.json
-          git commit -m 'Update snapshots'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+          git commit -m 'Update snapshots' || echo "No changes to commit"
+          git push https://x-access-token:${CI_TOKEN}@github.com/lekkerelou/tomorrowland-nft-checker-web.git HEAD:main
