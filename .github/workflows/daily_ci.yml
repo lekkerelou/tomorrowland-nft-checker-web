@@ -26,8 +26,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'lekkerelou'
+          git config --global user.email 'loulou@banwaves.xyz'
           git add result/snapshot/data/*
           git add result/snapshot/result.json
           git add result/snapshot/snapshot_aggregate_latest.json
