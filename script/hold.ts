@@ -160,10 +160,10 @@ async function run() {
     info(`Get all holder wallet balance`);
     let progress = 0;
     bar.start(result.size, progress);
-    for (const account of Array.from(result)) {
+    /*for (const account of Array.from(result)) {
       account[1]["balance"] = await getAccountInfo(account[0]);
       bar.update((progress += 1));
-    }
+    }*/
     bar.stop();
     success(`Get all holder wallet balance taken successfully`);
 
