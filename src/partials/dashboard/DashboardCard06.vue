@@ -26,16 +26,11 @@ export default {
   },
   setup() {
     const chartData = ref({
-      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value - 1})`).reverse(),
-        `Exchanged Medallion (${holders.collections.at(-1).burned_medallion})`,
-        `Medallion Redeemable (${holders.collections.at(-1).reedemable_medallion})`],
+      labels: [...holders.collections.at(-1).stats.map(value => `${value.name} (${value.value - 1})`).reverse()],
       datasets: [
         {
           label: "Holding",
-          data: [...holders.collections.at(-1).stats.map(value => value.value - 1).reverse(),
-            holders.collections.at(-1).burned_medallion,
-            holders.collections.at(-1).reedemable_medallion
-          ],
+          data: [...holders.collections.at(-1).stats.map(value => value.value - 1).reverse()],
           backgroundColor: [
             tailwindConfig().theme.colors.indigo[600],
             tailwindConfig().theme.colors.indigo[400],

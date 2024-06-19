@@ -80,19 +80,20 @@ const annotation6 = {
     content: 'Tomorrowland NFT Global Journey',
   }
 };
+ */
 const annotation7 = {
   type: 'box',
   backgroundColor: 'rgba(244, 63, 94, 0.3)',
   borderWidth: 0,
-  xMax: "2023/01/20 15:00",
-  xMin: "2023/01/17 15:00",
+  xMax: "2024/02/12 16:52",
+  xMin: "2024/02/18 23:00",
   label: {
     drawTime: 'beforeDraw',
     display: true,
     rotation: '90',
-    content: 'Tomorrowland NFT pre-sale',
+    content: 'TML Brasil NFT Registration',
   }
-};*/
+};
 export default {
   name: 'LineChart05',
   props: ['data', 'width', 'height'],
@@ -144,11 +145,7 @@ export default {
             },
             annotation: {
               annotations: {
-                /*annotation3,
-                annotation4,
-                annotation6,
-                annotation7,
-                annotation1,*/
+                annotation7
               }
             }
           },

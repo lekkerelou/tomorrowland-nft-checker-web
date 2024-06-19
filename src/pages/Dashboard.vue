@@ -54,18 +54,6 @@
             </div>
           </div>
 
-          <div class="shadow-lg rounded-sm border px-5 py-4 mb-5 bg-red-50 border-red-300" >
-            <div class="md:flex justify-between items-center space-y-4 md:space-y-0 space-x-2">
-              <!-- Left side -->
-              <div class="flex items-start space-x-3 md:space-x-4">
-                <div>
-                  <div class="text-sm">Exchanged Medaillon will be removed in next update (Option is no longer possible for the pre-sales registrations)</div>
-                </div>
-              </div>
-              <!-- Right side -->
-            </div>
-          </div>
-
           <!-- Cards -->
           <div class="grid grid-cols-12 gap-6">
             <FintechCard01 />
@@ -80,19 +68,8 @@
 </template>
 
 <script>
-import { computed, ref } from "vue";
-import Sidebar from "../partials/Sidebar.vue";
-import Header from "../partials/Header.vue";
-import WelcomeBanner from "../partials/dashboard/WelcomeBanner.vue";
-import DashboardAvatars from "../partials/dashboard/DashboardAvatars.vue";
-import FilterButton from "../components/DropdownFilter.vue";
-import Datepicker from "../components/Datepicker.vue";
+import { ref } from "vue";
 import FintechCard01 from "../partials/fintech/FintechCard01.vue";
-import DashboardCard01 from "../partials/dashboard/DashboardCard01.vue";
-import DashboardCard02 from "../partials/dashboard/DashboardCard02.vue";
-import DashboardCard03 from "../partials/dashboard/DashboardCard03.vue";
-import DashboardCard04 from "../partials/dashboard/DashboardCard04.vue";
-import DashboardCard05 from "../partials/dashboard/DashboardCard05.vue";
 import DashboardCard06 from "../partials/dashboard/DashboardCard06.vue";
 import DashboardCard07 from "../partials/dashboard/DashboardCard07.vue";
 import DashboardCard08 from "../partials/dashboard/DashboardCard08.vue";
@@ -100,6 +77,7 @@ import DashboardCard09 from "../partials/dashboard/DashboardCard09.vue";
 import DashboardCard10 from "../partials/dashboard/DashboardCard10.vue";
 import DashboardCard11 from "../partials/dashboard/DashboardCard11.vue";
 import holders from "../../result/holder/holders.json";
+import {TMLUser, TopBar} from "@tomorrowland/sso/build/tml-sso";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -111,6 +89,15 @@ export default {
 
   },
   setup() {
+    const tmlUser = new TMLUser();
+    var topbar = new TopBar({
+      userIntegration: 'full',
+      interceptRadioNavigation: 'full',
+      useSocialIcons: true,
+      position: 'fixed',
+    });
+    //topbar.init(tmlUser)
+
     const snapshoted = ref(false);
     const text = ref("");
     const color = ref("");
